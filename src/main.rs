@@ -1,4 +1,11 @@
+#[macro_use]
+extern crate specs_derive;
+
 use piston_window::*;
+use nalgebra as na;
+
+mod physics;
+mod rendering;
 
 fn main() {
     let mut window: PistonWindow =
