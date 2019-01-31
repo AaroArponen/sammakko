@@ -9,15 +9,13 @@ pub struct Position(pub Point2<f64>);
 pub struct PhysicsSystem;
 
 impl<'a> System<'a> for PhysicsSystem {
-    type SystemData = (
-        WriteStorage<'a, Position>,
-    );
+    type SystemData = WriteStorage<'a, Position>;
 
     fn run(&mut self, mut positions: Self::SystemData) {
-        (&mut positions,)
+        (&mut positions)
             .par_join()
             .for_each(|pos| {
-                pos.0 += Vector2::new(1,1);
+                pos.0 += Vector2::new(1.,1.);
             });
     }
 }
