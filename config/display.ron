@@ -1,0 +1,4 @@
+(
+    title: "Frog Cathedral",
+    dimensions: Some((256, 240)),
+)
